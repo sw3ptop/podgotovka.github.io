@@ -1,0 +1,133 @@
+/* Обнуляем отступы, чтобы меню было в самом верху */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Фон для верхней части (шапки) */
+header {
+    background: #383c54;
+}
+
+/* Сам список меню */
+.menu {
+    display: flex;
+    justify-content: center; /* Центрируем все пункты меню */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    z-index: 1000; /* Меню должно быть выше фотографии */
+}
+
+/* Каждый пункт меню */
+.menu li {
+    width: 200px;
+    list-style: none;
+    background: #383c54;
+    position: relative;
+}
+
+/* Ссылка в меню */
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    transition: all 0.5s;
+}
+
+/* Подсветка при наведении */
+.menu a:hover {
+    background: #808291;
+}
+
+/* Вложенные списки (подменю) */
+.menu ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1001; /* Подменю должно быть выше меню */
+}
+
+/* Показываем подменю при наведении */
+.menu li:hover > ul {
+    display: block;
+}
+
+/* Под-подменю выпадает вправо */
+.menu ul ul {
+    display: none;
+    top: 0;
+    left: 100%;
+}
+
+/* Показываем под-подменю при наведении */
+.menu li ul li:hover > ul {
+    display: block;
+}
+
+/* Ссылки в подменю делаем жирными */
+.menu li ul li a {
+    font-weight: bold;
+}
+
+/* Пробелы вокруг основного содержимого */
+main {
+    padding: 20px;
+    background: #fff;
+}
+
+/* Основной текст */
+p{
+    
+    font-size: 19px;
+    }
+.center{
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Фотография должна быть ниже меню */
+    max-width: 100%;
+    height: auto;
+    display: block;
+   
+}
+/* Стили для изображения */
+img {
+    display: block; /* Делаем изображение блочным элементом */
+    margin: 0 auto; /* Центрирование изображения по горизонтали */
+    max-width: 100%; /* Ограничиваем ширину изображения */
+    height: auto; /* Сохраняем пропорции */
+}
+/* Стили для контейнера изображений */
+.image-container {
+    display: flex; /* Используем Flexbox для расположения изображений */
+    justify-content: center; /* Центрируем изображения по горизонтали */
+    gap: 20px; /* Расстояние между изображениями */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+/* Стили для изображений внутри контейнера */
+.image-container img {
+    max-width: 100%; /* Ограничиваем ширину изображений */
+    height: auto; /* Сохраняем пропорции */
+}
+td {
+    text-align: left;
+      padding: 10px;
+      border: 3px solid rgb(2, 2, 2);
+  }
+   th {
+    text-align: center;
+    padding: 10px;
+      border: 3px solid rgb(2, 2, 2);
+   }
+
+
+

@@ -1,0 +1,206 @@
+/* Обнуляем отступы, чтобы меню было в самом верху */
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Фон для верхней части (шапки) */
+header {
+    background: #383c54;
+}
+
+/* Сам список меню */
+.menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative; /* Добавляем */
+    z-index: 1000; /* Устанавливаем высокий индекс */
+}
+
+/* Каждый пункт меню */
+.menu li {
+    width: 200px;
+    list-style: none;
+    background: #383c54;
+    position: relative;
+}
+
+/* Ссылка в меню */
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    transition: all 0.5s;
+    
+}
+
+/* Подсветка при наведении */
+.menu a:hover {
+    background: #808291;
+}
+
+/* Вложенные списки (подменю) */
+.menu ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Показываем подменю при наведении */
+.menu li:hover > ul {
+    display: block;
+}
+
+/* Под-подменю выпадает вправо */
+.menu ul ul {
+    display: none;
+    top: 0;
+    left: 100%;
+}
+
+/* Показываем под-подменю при наведении */
+.menu li ul li:hover > ul {
+    display: block;
+}
+
+/* Жирный шрифт для ссылок в подменю */
+.menu li ul li a {
+    font-weight: bold; /* Возвращаем жирный шрифт */
+}
+
+/* Основное пространство для контента */
+main {
+    padding: 20px;
+    text-align: left; /* Выравниваем текст слева */
+    background: #fff;
+    color: #333; /* Цвет текста */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем главный контент */
+}
+
+/* Заголовок теста */
+h1 {
+    font-size: 2em;
+    color: #383c54;
+    margin-left: 100px; /* Сдвигаем правее */
+}
+
+/* Контейнер для вопросов, чтобы они были не впритык */
+#quiz {
+    display: block;
+    text-align: left;
+    margin-top: 20px;
+    max-width: 600px; /* Ограничиваем ширину */
+    width: 100%;
+    margin-left: 100px; /* Сдвигаем правее */
+}
+
+/* Каждый вопрос оформлен слегка под карточку */
+.question {
+    background: #f9f9f9;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 18px; /* Увеличенный шрифт */
+}
+
+/* Список ответов */
+.answers {
+    display: flex;
+    flex-direction: column; /* Располагаем ответы вертикально */
+    align-items: flex-start; /* Выравниваем по левому краю */
+    gap: 10px; /* Расстояние между ответами */
+}
+
+/* Стили для каждого варианта ответа */
+.answer {
+    font-size: 16px; /* Увеличенный шрифт */
+    cursor: pointer;
+}
+
+/* Кнопка проверки ответов */
+button {
+    background-color: #383c54;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 18px;
+    margin-left: 100px; /* Сдвигаем правее */
+}
+
+button:hover {
+    background-color: #808291;
+}
+
+/* Стили модального окна */
+#modal {
+    display: none; /* Изначально спрятано */
+    position: fixed;
+    z-index: 999; /* Чтобы окно было поверх всего */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Содержимое модального окна */
+#modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Кнопка закрытия модального окна */
+.close-modal {
+    background: #383c54;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.close-modal:hover {
+    background: #808291;
+}
+.question img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+/* Для текстового ввода */
+input[type="text"] {
+    padding: 8px;
+    width: 300px;
+    margin: 5px 0;
+}
+
+/* Для чекбоксов (множественный выбор) */
+input[type="checkbox"] {
+    margin-right: 10px;
+}

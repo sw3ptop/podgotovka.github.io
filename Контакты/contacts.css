@@ -1,0 +1,135 @@
+/* Обнуляем отступы, чтобы меню было в самом верху */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Фон для верхней части (шапки) */
+header {
+    background: #383c54;
+}
+
+/* Сам список меню */
+.menu {
+    display: flex;
+    justify-content: center; /* Центрируем все пункты меню */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Каждый пункт меню */
+.menu li {
+    width: 200px;
+    list-style: none;
+    background: #383c54;
+    position: relative;
+}
+
+/* Ссылка в меню */
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    transition: all 0.5s;
+}
+
+/* Подсветка при наведении */
+.menu a:hover {
+    background: #808291;
+}
+
+/* Вложенные списки (подменю) */
+.menu ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Показываем подменю при наведении */
+.menu li:hover > ul {
+    display: block;
+}
+
+/* Под-подменю выпадает вправо */
+.menu ul ul {
+    display: none;
+    top: 0;
+    left: 100%;
+}
+
+/* Показываем под-подменю при наведении */
+.menu li ul li:hover > ul {
+    display: block;
+}
+
+/* Ссылки в подменю делаем жирными */
+.menu li ul li a {
+    font-weight: bold;
+}
+
+/* Пробелы вокруг основного содержимого */
+main {
+    padding: 20px;
+    background: #fff;
+}
+
+.contact-Теория {
+    text-align: center;
+    font-size: 24px; /* Увеличиваем размер шрифта */
+}
+
+.contact-Теория p {
+    margin: 10px 0; /* Добавляем немного отступов между строками */
+}
+
+.contact-Теория a {
+    font-size: 26px; /* Увеличиваем размер ссылок */
+    font-weight: bold;
+    color: #007bff; /* Делаем ссылки заметными */
+    text-decoration: none;
+}
+
+.contact-Теория a:hover {
+    text-decoration: underline;
+}
+
+
+
+.faq {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 24px;
+}
+
+.faq details {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.faq summary {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.faq p {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+
+
